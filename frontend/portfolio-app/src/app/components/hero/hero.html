@@ -1,0 +1,40 @@
+<section class="hero" id="home">
+  <div class="container hero-inner">
+    <div class="hero-text" appReveal>
+      <span class="eyebrow">Hi, I'm</span>
+      <h1>{{ profile.firstName }} <span>{{ profile.lastName }}</span></h1>
+      <h2>{{ profile.title }}</h2>
+      <p class="hero-copy">{{ profile.summary }}</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#projects">⌘ &nbsp;View My Work</a>
+        <a class="btn btn-outline" [href]="profile.cvUrl" target="_blank" rel="noopener" download="Sanchez CV (2).pdf">⇩ &nbsp;Download CV</a>
+      </div>
+      <div class="socials">
+        <a [href]="profile.gitHubUrl" target="_blank" rel="noopener" aria-label="GitHub">GH</a>
+        <a [href]="profile.linkedInUrl" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
+        <a [href]="'mailto:' + profile.email" aria-label="Email">✉</a>
+      </div>
+    </div>
+    <div class="portrait-wrap" appReveal>
+      <div class="portrait" aria-label="Portfolio profile placeholder">
+        <div class="code-bg">function App() {{ '{' }}
+  return (
+    &lt;div&gt;
+      &lt;Header /&gt;
+      &lt;Projects /&gt;
+      &lt;Contact /&gt;
+    &lt;/div&gt;
+  );
+{{ '}' }}
+
+const skills = [
+  "Angular",
+  "C#",
+  ".NET Core",
+  "SQL Server",
+  "Azure"
+];</div>
+      </div>
+    </div>
+  </div>
+</section>

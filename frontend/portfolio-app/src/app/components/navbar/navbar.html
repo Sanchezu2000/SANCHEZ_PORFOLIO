@@ -1,0 +1,16 @@
+<nav>
+  <div class="container nav-inner">
+    <a href="#home" class="logo">R<span>S.</span></a>
+    <button class="menu-btn" aria-label="Open menu" (click)="toggleMenu()">☰</button>
+    <div class="nav-links" [class.open]="isOpen()">
+      <a href="#home" [class.active]="activeSection() === 'home'" (click)="closeMenu()">Home</a>
+      <a href="#about" [class.active]="activeSection() === 'about'" (click)="closeMenu()">About</a>
+      <a href="#skills" [class.active]="activeSection() === 'skills'" (click)="closeMenu()">Skills</a>
+      <a href="#projects" [class.active]="activeSection() === 'projects'" (click)="closeMenu()">Projects</a>
+      <a href="#hepherion-labs" [class.active]="activeSection() === 'hepherion-labs'" (click)="closeMenu()">Hepherion Labs</a>
+      <a href="#certificates" [class.active]="activeSection() === 'certificates'" (click)="closeMenu()">Certificates</a>
+      <a href="#contact" [class.active]="activeSection() === 'contact'" (click)="closeMenu()">Contact</a>
+    </div>
+    <a class="talk-btn" href="#contact">✈ Let's Talk</a>
+  </div>
+</nav>

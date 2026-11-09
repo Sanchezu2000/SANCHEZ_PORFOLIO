@@ -1,0 +1,26 @@
+<app-navbar></app-navbar>
+
+@if (profile && !loading()) {
+  <main>
+    <app-hero [profile]="profile"></app-hero>
+    <app-projects [projects]="projects"></app-projects>
+    <app-hepherion-labs [projects]="hepherionLabsProjects"></app-hepherion-labs>
+    <app-about [features]="features"></app-about>
+    <app-skills [skills]="skills" [highlightedSkills]="highlightedSkills()"></app-skills>
+    <app-certificates [certificates]="certificates" (highlightSkills)="highlightedSkills.set($event)"></app-certificates>
+    <app-contact [profile]="profile"></app-contact>
+  </main>
+}
+
+@if (loading()) {
+  <div style="padding:120px 0;text-align:center;color:#667085">Loading portfolio…</div>
+}
+@if (loadError()) {
+  <div style="padding:120px 0;text-align:center;color:#b91c1c">
+    Could not reach the API. Make sure the PortfolioApi backend is running.
+  </div>
+}
+
+@if (profile) {
+  <app-footer [fullName]="profile.firstName + ' ' + profile.lastName"></app-footer>
+}

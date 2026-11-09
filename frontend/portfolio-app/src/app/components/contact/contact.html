@@ -1,0 +1,33 @@
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="contact-box" appReveal>
+      <div>
+        <div class="section-kicker">Get In Touch</div>
+        <h2 class="section-title">Let's build something together.</h2>
+        <p>I'm open to opportunities where I can contribute, learn, and grow as a software engineer.</p>
+        <div class="contact-list">
+          <div>✉ {{ profile.email }}</div>
+          <div>📍 {{ profile.location }}</div>
+          <div>💼 Open to software engineering opportunities</div>
+        </div>
+      </div>
+      <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <input type="text" placeholder="Your name" formControlName="name" required />
+        <input type="email" placeholder="Your email" formControlName="email" required />
+        <textarea placeholder="Your message" formControlName="message" required></textarea>
+        <button class="submit" type="submit" [disabled]="submitting()">
+          {{ submitting() ? 'Sending…' : 'Send Message →' }}
+        </button>
+        @if (statusMessage()) {
+          <div
+            class="form-status"
+            [class.success]="!statusIsError()"
+            [class.error]="statusIsError()"
+          >
+            {{ statusMessage() }}
+          </div>
+        }
+      </form>
+    </div>
+  </div>
+</section>

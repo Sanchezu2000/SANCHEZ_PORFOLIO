@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "rQeZxtOpj5M=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\TRAINEE-SANCHEZ\\SANCHEZ_PORFOLIO\\backend\\PortfolioApi\\PortfolioApi.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\TRAINEE-SANCHEZ\\.nuget\\packages\\microsoft.aspnetcore.openapi\\9.0.17\\microsoft.aspnetcore.openapi.9.0.17.nupkg.sha512",
+    "C:\\Users\\TRAINEE-SANCHEZ\\.nuget\\packages\\microsoft.openapi\\1.6.17\\microsoft.openapi.1.6.17.nupkg.sha512"
+  ],
+  "logs": []
+}

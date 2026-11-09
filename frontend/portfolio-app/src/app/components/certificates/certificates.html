@@ -1,0 +1,45 @@
+<section class="certs" id="certificates">
+  <div class="container">
+    <div appReveal>
+      <div class="section-kicker">Credentials</div>
+      <h2 class="section-title">Certifications</h2>
+      <p class="section-hint">Click a certification to highlight the skills it strengthens. Click the image to zoom in.</p>
+    </div>
+    <div class="cert-grid">
+      @for (cert of certificates; track cert.title; let i = $index) {
+        <div
+          class="cert cert-clickable"
+          appReveal
+          [class.active]="active() === i"
+          role="button"
+          tabindex="0"
+          (click)="select(cert, i)"
+          (keydown.enter)="select(cert, i)"
+          (keydown.space)="select(cert, i); $event.preventDefault()"
+        >
+          @if (cert.imageUrl) {
+            <button
+              type="button"
+              class="cert-image-btn"
+              (click)="openZoom($event, cert)"
+              [attr.aria-label]="'Zoom into ' + cert.title"
+            >
+              <img class="cert-image" [src]="cert.imageUrl" [alt]="cert.title">
+            </button>
+          } @else {
+            <div class="cert-icon">{{ cert.icon }}</div>
+          }
+          <h3>{{ cert.title }}</h3>
+          <p>{{ cert.description }}</p>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+@if (zoomed(); as cert) {
+  <div class="cert-lightbox" (click)="closeZoom()">
+    <button type="button" class="cert-lightbox-close" (click)="closeZoom()" aria-label="Close">✕</button>
+    <img class="cert-lightbox-img" [src]="cert.imageUrl" [alt]="cert.title" (click)="$event.stopPropagation()">
+  </div>
+}

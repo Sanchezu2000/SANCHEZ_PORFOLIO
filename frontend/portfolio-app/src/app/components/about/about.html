@@ -1,0 +1,21 @@
+<section class="about" id="about">
+  <div class="container about-grid">
+    <div class="about-text" appReveal>
+      <div class="section-kicker">About Me</div>
+      <h2 class="section-title">Passionate about building useful software.</h2>
+      <p>
+        I'm a Junior Software Engineer focused on full-stack web development. I enjoy building applications,
+        working with APIs and databases, and learning cloud and modern development practices.
+      </p>
+    </div>
+    <div class="feature-grid">
+      @for (feature of features; track feature.title) {
+        <div class="feature" appReveal>
+          <div class="icon">{{ feature.icon }}</div>
+          <h3>{{ feature.title }}</h3>
+          <p>{{ feature.description }}</p>
+        </div>
+      }
+    </div>
+  </div>
+</section>
